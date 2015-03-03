@@ -278,7 +278,7 @@ func (b *Bitcoind) GetRawTransaction(txId string, verbose uint32) (rawTx interfa
 	if err = handleError(err, &r); err != nil {
 		return
 	}
-	if !verbose {
+	if 0 == verbose {
 		err = json.Unmarshal(r.Result, &rawTx)
 	} else {
 		var t RawTransaction
